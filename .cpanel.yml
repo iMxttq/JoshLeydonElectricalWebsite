@@ -6,7 +6,7 @@ deployment:
     - /bin/cp style.css $DEPLOYPATH
     - /bin/cp Logo-Normal.jpg $DEPLOYPATH
     - /bin/cp Logo-Inverted.png $DEPLOYPATH
-    - /bin/cp -R website_images $DEPOLYPATH/website_images/
+    - /bin/cp -R website_images $DEPLOYPATH/website_images/
     - /bin/cp kitchen.png $DEPLOYPATH
     - /bin/cp ute.png $DEPLOYPATH
     - /bin/cp header.js $DEPLOYPATH
