@@ -656,9 +656,6 @@ ion-icon {
   @viewport { width: 550px; }
   .sec1 {
     align-items: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
   }
   .page-content-sec1 p{
     font-size: 5vw;
