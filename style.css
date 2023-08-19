@@ -532,7 +532,11 @@ ion-icon {
   .sec1 {
     align-items: center;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: column; 
+    /*test
+
+
+    */
   }
 
   .mobile-24-hour {
@@ -545,6 +549,14 @@ ion-icon {
     margin: 2% auto;
   }
 
+  /*
+
+
+
+  test
+
+  */
+  
   .container {
     display: grid;
     grid-template-rows: auto;
