@@ -10,7 +10,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  font-size: 1.2vw;
+  font-size: 20px;
   width: 100%;
   z-index: 999;
 }
@@ -26,7 +26,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  font-size: 1.2vw;
+  font-size: 20px;
   width: 100%;
   z-index: 9999;
 }
@@ -70,7 +70,7 @@ nav ul li a:hover {
 }
 
 .call-us-top-text{
-  font-size: 1.2vw;
+  font-size: 20px;
   text-align: center;
 }
 .call-us {
@@ -178,13 +178,13 @@ body {
 
 h1 {
   margin-top: 0;
-  font-size: 3vw;
+  font-size: 25px;
   text-align: center;
   align-items: center;
 }
 
 p {
-  font-size: 1.5vw;
+  font-size: 20px;
 }
 
 
