@@ -26,6 +26,7 @@ function duplicateAndFixHeader() {
   window.addEventListener('scroll', toggleFixedHeader);
 }
 
+
 // Function to handle smooth scrolling to sections
 function handleSectionScroll(event) {
   event.preventDefault();
@@ -78,28 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
       link.addEventListener('click', handleSectionScroll);
     }
   });
-  
-
-  // Add hamburger menu functionality
-  function toggleMobileMenu() {
-  const menuList = document.getElementById("hamburger-links");
-  menuList.style.display = menuList.style.display === "block" ? "none" : "block";
-}
-  
-  // Attach click event listener to the hamburger icon
-  const hamburgerIcon = document.querySelector('.hamburger-icon');
-  hamburgerIcon.addEventListener('click', toggleMobileMenu);
-  
-
-  // Function to close the mobile menu when a link is clicked
-  function closeMobileMenu() {
-    const menuList = document.querySelector('hamburger-links');
-    menuList.classList.remove('show');
-  
-    // Show the header links in the header after closing the mobile menu
-    const headerLinks = document.querySelector('header nav');
-    headerLinks.style.display = 'flex';
-  }
 
   
   // Attach click event listeners to header links in the mobile menu
@@ -111,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  
   // Handle window resize event
   window.addEventListener('resize', function () {
     const originalHeader = document.querySelector('header');

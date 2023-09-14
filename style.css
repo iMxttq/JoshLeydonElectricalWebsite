@@ -93,9 +93,6 @@ nav ul li a:hover {
   z-index: 999;
 }
 
-#hamburger-links{
-  display: none;
-}
 .sec1 {
   text-align: left;
   background-image: url("ute.png");
@@ -394,34 +391,155 @@ ion-icon {
   text-decoration: none;
 }
 
-.hamburger-icon {
-  display: none;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 1000;
+/*
+    * Project Name : 'Sidebar'
+    * Built by : 'Gulshan Songara'
+*/
+
+/*--====== Global Variables ======--*/
+:root {
+  --bg-color: #13131f;
+  --bg-color-2: hsl(205, 100%, 18%);
+  --text-color: #a9afc3;
 }
 
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 6px 0;
-  transition: 0.4s;
+
+/*--====== CSS Reset ======--*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Style for the "X" icon when the menu is open */
-.show .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-6px, 6px);
+html {
+  scroll-behavior: smooth;
 }
 
-.show .bar:nth-child(2) {
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.lead { font-size: 1.5rem; font-weight: 300; }
+.container { margin: 150px auto; max-width: 960px; }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/*--====== Sidebar ======--*/
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  max-width: 300px;
+  width: 80%;
+  height: 100%;
+  padding: 2rem;
+  background-color: var(--bg-color-2);
+  box-shadow: 0 10px 20px -4px #000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  pointer-events: none;
   opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease, visibility 0.2s ease, transform 0.3s ease;
 }
 
-.show .bar:nth-child(3) {
-  transform: rotate(45deg) translate(-6px, -6px);
+/* when the sidebar has 'show' class */
+#sidebar.show {
+  pointer-events: all;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.sidebar_content {
+  padding: 2.8rem 0;
+  pointer-events: none;
+  /* so that the Sidebar does not get closed while clicking on sidebar_content */
+}
+
+.sidebar_content a {
+  pointer-events: all;
+  /* so that all the <a> inside sidebar_content are clickable */
+}
+
+.sidebar_body {
+  border-top: 1px dashed var(--text-color);
+  border-bottom: 1px dashed var(--text-color);
+}
+
+.side_navlinks ul {
+  display: grid;
+  gap: 2rem;
+}
+
+.side_navlinks li a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.side_navlinks a:hover {
+  opacity: 1;
+}
+
+/*---- Sidebar-Toggler ----*/
+.sidebar_toggler {
+  position: fixed;
+  top: 4vh;
+  right: 3vw;
+  width: 1.75rem;
+  height: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 100000;
+}
+
+.sidebar_toggler span {
+  background-color: #ddd;
+  width: 100%;
+  height: 2.4px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  /* so that it doesn't overlap the sidebar_toggler */
+}
+
+/* if the sidebar has 'show' class then their adjacent-sibling (i.e., sidebar_toggler) will... */
+#sidebar.show + .sidebar_toggler {
+  justify-content: center;
+}
+
+#sidebar.show + .sidebar_toggler span {
+  margin-top: -1.2px;
+  margin-bottom: -1.2px;
+}
+
+#sidebar.show + .sidebar_toggler span:first-child {
+  transform: rotate(45deg);
+}
+
+#sidebar.show + .sidebar_toggler span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+#sidebar.show + .sidebar_toggler span:last-child {
+  transform: rotate(-45deg);
 }
 
 /* Update the existing media query for screens up to 1024 */
@@ -430,6 +548,7 @@ ion-icon {
 
 @media (max-width: 1024px)  {
   @viewport { width: 1024px; }
+
 
   .menu-list.show {
     display: flex;
@@ -488,16 +607,9 @@ ion-icon {
     display: none;
   }
 
-  #hamburger-links {
-    display: none;
-  }
 
   .menu-list li {
     margin: 10px;
-  }
-
-  .hamburger-icon {
-    display: none;
   }
 
   /* Show the logo when the screen is 1024px or below */
@@ -516,9 +628,13 @@ ion-icon {
   .header-right{
     width: 40%;
   }
-  .call-us-top-text{
-    font-size: 2vw;
+  .header-text{
+    visibility: hidden;
   }
+  .sidebar_toggler{
+    visibility: visible;
+  }
+
   .sec2 h1{
     font-size: 4vw;
     align-items: center;
@@ -569,6 +685,13 @@ ion-icon {
     font-size: 3vw;
     margin-right: 5%;
   }
+  .contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
 
 @media (max-width: 767px)  {
@@ -580,7 +703,7 @@ ion-icon {
     flex-direction: column; 
   }
 
-  .mobile-24-hour {
+  /* .mobile-24-hour {
     display: block;
     border-radius: 10px;
     padding: 2%;
@@ -588,7 +711,7 @@ ion-icon {
     color: #ffffff;
     max-width: 90%;
     margin: 2% auto;
-  }
+  } */
 
 
   .container {
@@ -614,7 +737,6 @@ ion-icon {
 
   .header {
    
-    padding-right: 50px;
     display: flex;
     flex-direction: column;
   }
@@ -624,9 +746,8 @@ ion-icon {
     font-size: 3vw;
     flex: initial;
   }
-  .header-right{
-    display: none;
-  }
+ 
+
 
   .call-us-top-text{
     font-size: 3vw;
@@ -696,6 +817,13 @@ ion-icon {
   .page-content-sec3 p{
     font-size: 3vw;
   }
+  .contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
 /* Update the existing media query for screens up to 420 */
 @media only screen and (max-width: 550px) {
@@ -745,6 +873,9 @@ ion-icon {
     text-align: center;
   }
 
+  .sidebar_toggler{
+    visibility: visible;
+  }
   .header-right {
     margin-top: 15px;
   }
