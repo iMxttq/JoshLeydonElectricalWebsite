@@ -105,13 +105,11 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  min-height: 90vh;
   background-attachment: fixed;
   overflow: hidden;
 }
-.mobile-background-image {
-  display: none;
-}
+
 .mobile-24-hour{
   display: none;
 }
@@ -123,12 +121,7 @@ nav ul li a:hover {
   max-width: 90%;
   margin: 2% auto;
   margin-right: 60%; margin-left: 5%;
-  margin-top: 5%;
 }
-.mobile-page-content-sec1{
-  display: none;
-}
-
 .sec2{
   display: flex;
   align-items: center;
@@ -536,7 +529,6 @@ ion-icon {
 @media (max-width: 767px)  {
   @viewport { width: 767px; }
 
-<<<<<<< Updated upstream
   .sec1 {
     align-items: center;
     flex-wrap: wrap;
@@ -553,36 +545,13 @@ ion-icon {
     margin: 2% auto;
   }
 
-=======
->>>>>>> Stashed changes
   .container {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: auto;
   }
-  .page-content{
-    margin-top: 6%;
-  }
-  .page-content-sec1 {
-    display: none;
-  }
-  .mobile-page-content-sec1{
-    border-radius: 10px;
-    padding: 1%;
-    color: black;
-    max-width: 90%;
-    margin: 2% auto;
-    margin-top: 1%;
-    display: block;
-  }
-  .mobile-page-content-sec1 p{
-    font-size: 4vw;
-  }
-  .mobile-background-image {
-    display: inherit;
-    max-width: 100%;
-    height: auto; /* Maintain image aspect ratio */
-    margin-bottom: 20px; 
+  .page-content-sec1 p{
+    font-size: 3vw;
   }
 
   .page-content2 {
@@ -687,15 +656,9 @@ ion-icon {
   @viewport { width: 550px; }
   .sec1 {
     align-items: center;
-<<<<<<< Updated upstream
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
-=======
-    flex-wrap: wrap;
-    flex-direction: column; 
-    background-image: none;
->>>>>>> Stashed changes
   }
   .page-content-sec1 p{
     font-size: 5vw;
