@@ -382,13 +382,8 @@ ion-icon {
   text-align: center;
   margin-bottom: 4%;
 }
-.google-reviews-button{
-  background-color: #0066cc;
-  color: #ffffff;
-  border-radius: 20px;
-  padding: 5px 10px;
-  font-size: 24px;
-  text-decoration: none;
+.review-image{
+  border: 1px solid grey;
 }
 
 /*
@@ -423,7 +418,6 @@ body {
   color: var(--text-color);
 }
 .lead { font-size: 1.5rem; font-weight: 300; }
-.container { margin: 150px auto; max-width: 960px; }
 a {
   text-decoration: none;
   color: inherit;
