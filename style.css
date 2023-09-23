@@ -10,7 +10,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  font-size: 1.2vw;
+  font-size: 18px;
   width: 100%;
   z-index: 999;
 }
@@ -26,7 +26,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  font-size: 1.2vw;
+  font-size: 18px;
   width: 100%;
   z-index: 9999;
 }
@@ -70,7 +70,7 @@ nav ul li a:hover {
 }
 
 .call-us-top-text{
-  font-size: 1.2vw;
+  font-size: 18px;
   text-align: center;
 }
 .call-us {
@@ -93,9 +93,6 @@ nav ul li a:hover {
   z-index: 999;
 }
 
-#hamburger-links{
-  display: none;
-}
 .sec1 {
   text-align: left;
   background-image: url("ute.png");
@@ -105,13 +102,11 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  min-height: 90vh;
   background-attachment: fixed;
   overflow: hidden;
 }
-.mobile-background-image {
-  display: none;
-}
+
 .mobile-24-hour{
   display: none;
 }
@@ -123,12 +118,7 @@ nav ul li a:hover {
   max-width: 90%;
   margin: 2% auto;
   margin-right: 60%; margin-left: 5%;
-  margin-top: 5%;
 }
-.mobile-page-content-sec1{
-  display: none;
-}
-
 .sec2{
   display: flex;
   align-items: center;
@@ -185,13 +175,13 @@ body {
 
 h1 {
   margin-top: 0;
-  font-size: 3vw;
+  font-size: 25px;
   text-align: center;
   align-items: center;
 }
 
 p {
-  font-size: 1.5vw;
+  font-size: 20px;
 }
 
 
@@ -317,19 +307,64 @@ ion-icon {
   padding: 10px; /* Add padding here */
 }
 
+
 .footer {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  flex-direction: column;
   background-color: #eeeeee;
   height: 16.666%;
   font-size: 18px;
   text-align: left;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  line-height: .1;
-  flex-wrap: wrap;
+  padding-top: 1%;
+  padding-left: 12%;
+  padding-right: 12%;
+  line-height: 1.5;
 }
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  margin-top: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end; /* Align icons to the right */
+}
+
+/* Additional CSS for copyright centering */
+.footer .copyright {
+  text-align: center;
+  margin: 0 auto; /* Center the copyright horizontally */
+}
+
+
+
+
+
+
+
+
+
+
 
 .glide__slide img{
   margin-top: 3%;
@@ -347,43 +382,158 @@ ion-icon {
   text-align: center;
   margin-bottom: 4%;
 }
-.google-reviews-button{
-  background-color: #0066cc;
-  color: #ffffff;
-  border-radius: 20px;
-  padding: 5px 10px;
-  font-size: 24px;
+.review-image{
+  border: 1px solid grey;
+}
+
+/*
+    * Project Name : 'Sidebar'
+    * Built by : 'Gulshan Songara'
+*/
+
+/*--====== Global Variables ======--*/
+:root {
+  --bg-color: #13131f;
+  --bg-color-2: hsl(205, 100%, 18%);
+  --text-color: #a9afc3;
+}
+
+
+/*--====== CSS Reset ======--*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.lead { font-size: 1.5rem; font-weight: 300; }
+a {
   text-decoration: none;
+  color: inherit;
 }
 
-.hamburger-icon {
-  display: none;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 1000;
+ul {
+  list-style: none;
 }
 
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 6px 0;
-  transition: 0.4s;
-}
 
-/* Style for the "X" icon when the menu is open */
-.show .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-6px, 6px);
-}
-
-.show .bar:nth-child(2) {
+/*--====== Sidebar ======--*/
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  max-width: 300px;
+  width: 80%;
+  height: 100%;
+  padding: 2rem;
+  background-color: var(--bg-color-2);
+  box-shadow: 0 10px 20px -4px #000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  pointer-events: none;
   opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease, visibility 0.2s ease, transform 0.3s ease;
 }
 
-.show .bar:nth-child(3) {
-  transform: rotate(45deg) translate(-6px, -6px);
+/* when the sidebar has 'show' class */
+#sidebar.show {
+  pointer-events: all;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.sidebar_content {
+  padding: 2.8rem 0;
+  pointer-events: none;
+  /* so that the Sidebar does not get closed while clicking on sidebar_content */
+}
+
+.sidebar_content a {
+  pointer-events: all;
+  /* so that all the <a> inside sidebar_content are clickable */
+}
+
+.sidebar_body {
+  border-top: 1px dashed var(--text-color);
+  border-bottom: 1px dashed var(--text-color);
+}
+
+.side_navlinks ul {
+  display: grid;
+  gap: 2rem;
+}
+
+.side_navlinks li a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.side_navlinks a:hover {
+  opacity: 1;
+}
+
+/*---- Sidebar-Toggler ----*/
+.sidebar_toggler {
+  position: fixed;
+  top: 4vh;
+  right: 3vw;
+  width: 1.75rem;
+  height: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 100000;
+}
+
+.sidebar_toggler span {
+  background-color: #ddd;
+  width: 100%;
+  height: 2.4px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  /* so that it doesn't overlap the sidebar_toggler */
+}
+
+/* if the sidebar has 'show' class then their adjacent-sibling (i.e., sidebar_toggler) will... */
+#sidebar.show + .sidebar_toggler {
+  justify-content: center;
+}
+
+#sidebar.show + .sidebar_toggler span {
+  margin-top: -1.2px;
+  margin-bottom: -1.2px;
+}
+
+#sidebar.show + .sidebar_toggler span:first-child {
+  transform: rotate(45deg);
+}
+
+#sidebar.show + .sidebar_toggler span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+#sidebar.show + .sidebar_toggler span:last-child {
+  transform: rotate(-45deg);
 }
 
 /* Update the existing media query for screens up to 1024 */
@@ -392,6 +542,7 @@ ion-icon {
 
 @media (max-width: 1024px)  {
   @viewport { width: 1024px; }
+
 
   .menu-list.show {
     display: flex;
@@ -450,16 +601,9 @@ ion-icon {
     display: none;
   }
 
-  #hamburger-links {
-    display: none;
-  }
 
   .menu-list li {
     margin: 10px;
-  }
-
-  .hamburger-icon {
-    display: none;
   }
 
   /* Show the logo when the screen is 1024px or below */
@@ -478,9 +622,13 @@ ion-icon {
   .header-right{
     width: 40%;
   }
-  .call-us-top-text{
-    font-size: 2vw;
+  .header-text{
+    visibility: hidden;
   }
+  .sidebar_toggler{
+    visibility: visible;
+  }
+
   .sec2 h1{
     font-size: 4vw;
     align-items: center;
@@ -531,6 +679,13 @@ ion-icon {
     font-size: 3vw;
     margin-right: 5%;
   }
+  .contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
 
 @media (max-width: 767px)  {
@@ -539,10 +694,10 @@ ion-icon {
   .sec1 {
     align-items: center;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: column; 
   }
 
-  .mobile-24-hour {
+  /* .mobile-24-hour {
     display: block;
     border-radius: 10px;
     padding: 2%;
@@ -550,36 +705,16 @@ ion-icon {
     color: #ffffff;
     max-width: 90%;
     margin: 2% auto;
-  }
+  } */
+
 
   .container {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: auto;
   }
-  .page-content{
-    margin-top: 6%;
-  }
-  .page-content-sec1 {
-    display: none;
-  }
-  .mobile-page-content-sec1{
-    border-radius: 10px;
-    padding: 1%;
-    color: black;
-    max-width: 90%;
-    margin: 2% auto;
-    margin-top: 1%;
-    display: block;
-  }
-  .mobile-page-content-sec1 p{
-    font-size: 4vw;
-  }
-  .mobile-background-image {
-    display: inherit;
-    max-width: 100%;
-    height: auto; /* Maintain image aspect ratio */
-    margin-bottom: 20px; 
+  .page-content-sec1 p{
+    font-size: 3vw;
   }
 
   .page-content2 {
@@ -596,7 +731,6 @@ ion-icon {
 
   .header {
    
-    padding-right: 50px;
     display: flex;
     flex-direction: column;
   }
@@ -606,9 +740,8 @@ ion-icon {
     font-size: 3vw;
     flex: initial;
   }
-  .header-right{
-    display: none;
-  }
+ 
+
 
   .call-us-top-text{
     font-size: 3vw;
@@ -678,6 +811,13 @@ ion-icon {
   .page-content-sec3 p{
     font-size: 3vw;
   }
+  .contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
 /* Update the existing media query for screens up to 420 */
 @media only screen and (max-width: 550px) {
@@ -728,6 +868,9 @@ ion-icon {
     text-align: center;
   }
 
+  .sidebar_toggler{
+    visibility: visible;
+  }
   .header-right {
     margin-top: 15px;
   }
