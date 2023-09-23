@@ -9,6 +9,8 @@ deployment:
     - /bin/cp -R website_images $DEPLOYPATH/website_images/
     - /bin/cp kitchen.png $DEPLOYPATH
     - /bin/cp ute.png $DEPLOYPATH
+    - /bin/cp review-rating.png $DEPLOYPATH
     - /bin/cp header.js $DEPLOYPATH
     - /bin/cp carousel.js $DEPLOYPATH
     - /bin/cp gallery.html $DEPLOYPATH
+    - /bin/cp hamburger_menu.js $DEPLOYPATH
