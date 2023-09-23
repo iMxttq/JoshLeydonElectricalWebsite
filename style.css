@@ -826,6 +826,7 @@ ul {
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column; 
+    background-image: none;
   }
   .page-content-sec1 p{
     font-size: 5vw;
