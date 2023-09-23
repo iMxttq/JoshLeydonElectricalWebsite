@@ -536,7 +536,6 @@ ion-icon {
 @media (max-width: 767px)  {
   @viewport { width: 767px; }
 
-<<<<<<< Updated upstream
   .sec1 {
     align-items: center;
     flex-wrap: wrap;
@@ -553,8 +552,6 @@ ion-icon {
     margin: 2% auto;
   }
 
-=======
->>>>>>> Stashed changes
   .container {
     display: grid;
     grid-template-rows: auto;
@@ -687,15 +684,9 @@ ion-icon {
   @viewport { width: 550px; }
   .sec1 {
     align-items: center;
-<<<<<<< Updated upstream
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
-=======
     flex-wrap: wrap;
     flex-direction: column; 
     background-image: none;
->>>>>>> Stashed changes
   }
   .page-content-sec1 p{
     font-size: 5vw;
